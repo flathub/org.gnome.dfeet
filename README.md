@@ -5,9 +5,10 @@ D-Feet is an easy to use D-Bus debugger. D-Feet can be used to inspect D-Bus int
 ## Notes
 
 * `0001-Rename-the-icons-appdata-and-desktop-files.patch`,
-  `0003-build-Install-appstream-metadata-to-non-deprecated-l.patch`: already
-  merged upstream. We use `"rm-configure": true` in the manifest to cause
-  `autogen.sh` to be re-run.
+  `0003-build-Install-appstream-metadata-to-non-deprecated-l.patch`,
+  `0004-Do-not-use-hyphen-for-the-reverse-DNS-names.patch`:
+  already merged upstream. We use `"rm-configure": true` in the manifest to
+  cause `autogen.sh` to be re-run.
 
 ## Credits
 
