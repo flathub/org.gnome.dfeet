@@ -73,6 +73,10 @@
                 {
                     "type": "patch",
                     "path": "0004-Do-not-use-hyphen-for-the-reverse-DNS-names.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "0005-Set-icon_name-to-org.gnome.dfeet.patch"
                 }
             ]
         }

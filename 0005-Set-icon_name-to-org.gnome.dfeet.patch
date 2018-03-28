@@ -1,0 +1,58 @@
+From 8da9d87b60c0997bdee8b0646835520c2d44bbe5 Mon Sep 17 00:00:00 2001
+From: Will Thompson <will@willthompson.co.uk>
+Date: Wed, 21 Feb 2018 15:58:02 +0000
+Subject: [PATCH] Set icon_name to org.gnome.dfeet
+
+This was being set to "d-feet", but the icon is now called
+org.gnome.dfeet.
+---
+ src/dfeet/application.py | 7 ++++---
+ src/dfeet/window.py      | 2 +-
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/src/dfeet/application.py b/src/dfeet/application.py
+index 9ddb66d..f16e7f2 100644
+--- a/src/dfeet/application.py
++++ b/src/dfeet/application.py
+@@ -44,7 +44,8 @@ class DFeetApp(Gtk.Application):
+         self.quit()
+ 
+     def action_about_cb(self, action, parameter):
+-        aboutdialog = DFeetAboutDialog(self.package, self.version)
++        aboutdialog = DFeetAboutDialog(self.package, self.version,
++                                       self.props.application_id)
+         aboutdialog.set_transient_for(self._main_win)
+         aboutdialog.show()
+ 
+@@ -55,13 +56,13 @@ class DFeetApp(Gtk.Application):
+ 
+ 
+ class DFeetAboutDialog(Gtk.AboutDialog):
+-    def __init__(self, package, version):
++    def __init__(self, package, version, icon_name):
+         Gtk.AboutDialog.__init__(self)
+         self.set_program_name(package)
+         self.set_version(version)
+         self.set_license_type(Gtk.License.GPL_2_0)
+         self.set_website("https://wiki.gnome.org/Apps/DFeet/")
+-        self.set_logo_icon_name(package)
++        self.set_logo_icon_name(icon_name)
+         self.connect("response", self.on_close_cb)
+ 
+     def on_close_cb(self, action, parameter):
+diff --git a/src/dfeet/window.py b/src/dfeet/window.py
+index 5bfd9af..e1943e7 100644
+--- a/src/dfeet/window.py
++++ b/src/dfeet/window.py
+@@ -45,7 +45,7 @@ class DFeetWindow(Gtk.ApplicationWindow):
+ 
+         # setup the window
+         self.set_default_size(600, 480)
+-        self.set_icon_name(package)
++        self.set_icon_name(app.props.application_id)
+ 
+         # create actions
+         action = Gio.SimpleAction.new('connect-system-bus', None)
+-- 
+2.14.3
+

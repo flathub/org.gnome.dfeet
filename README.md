@@ -9,6 +9,7 @@ D-Feet is an easy to use D-Bus debugger. D-Feet can be used to inspect D-Bus int
   `0004-Do-not-use-hyphen-for-the-reverse-DNS-names.patch`:
   already merged upstream. We use `"rm-configure": true` in the manifest to
   cause `autogen.sh` to be re-run.
+* `0005-Set-icon_name-to-org.gnome.dfeet.patch`: already merged upstream.
 
 ## Credits
 
