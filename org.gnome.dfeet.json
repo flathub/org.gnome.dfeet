@@ -11,18 +11,23 @@
         "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
         "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
+    "build-options" : {
+        "env": {
+            "PYTHON": "/usr/bin/python3"
+        }
+    },
     "modules": [
         {
             "name": "pycairo",
             "buildsystem": "simple",
             "build-commands": [
-                "python2 setup.py install --prefix=/app"
+                "python3 setup.py install --prefix=/app"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/pygobject/pycairo/releases/download/v1.15.4/pycairo-1.15.4.tar.gz",
-                    "sha256": "ee4c3068c048230e5ce74bb8994a024711129bde1af1d76e3276c7acd81c4357"
+                    "url": "https://github.com/pygobject/pycairo/releases/download/v1.17.1/pycairo-1.17.1.tar.gz",
+                    "sha256": "0f0a35ec923d87bc495f6753b1e540fd046d95db56a35250c44089fbce03b698"
                 }
             ],
             "cleanup": [
@@ -32,22 +37,24 @@
         },
         {
             "name": "pygobject",
-            "build-options" : {
-                "env": {
-                    "PYTHON": "/usr/bin/python2"
-                }
-            },
+            "buildsystem": "simple",
+            "build-commands": [
+                "python3 setup.py install --prefix=/app"
+            ],
+            "ensure-writable" : [
+                "/lib/python*/site-packages/easy-install.pth"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/pygobject/3.27/pygobject-3.27.1.tar.xz",
-                    "sha256": "40a62c479eed9aca6b2095b1650ab87981b7358880a0a07cacbdcbc250e155f1"
+                    "url": "https://download.gnome.org/sources/pygobject/3.30/pygobject-3.30.1.tar.xz",
+                    "sha256": "e1335b70e36885bf1ae207ec1283a369b8fc3e080688046c1edb5a676edc11ce"
                 }
             ],
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
-                "/lib/python2.7/site-packages/gi/*.la"
+                "/lib/python*/site-packages/gi/*.la"
             ]
         },
         {
