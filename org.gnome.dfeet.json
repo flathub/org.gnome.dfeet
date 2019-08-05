@@ -68,6 +68,10 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/d-feet/0.3/d-feet-0.3.14.tar.xz",
                     "sha256": "eedc20a97e7eee4cce9348a19565db8f5e0947abbf74e34f0711ca4279e414d5"
+                },
+                {
+                    "type": "patch",
+                    "path": "appdata-add-OARS-metadata.patch"
                 }
             ]
         }
