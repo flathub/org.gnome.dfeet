@@ -1,0 +1,24 @@
+From 8a05a4e3c03214e364e7856577358ad19e70d506 Mon Sep 17 00:00:00 2001
+From: Will Thompson <wjt@endlessm.com>
+Date: Thu, 21 Mar 2019 11:55:01 +0000
+Subject: [PATCH] appdata: add OARS metadata
+
+Generated with <https://hughsie.github.io/oars/generate.html>. This app
+does not connect to the internet and does not take your money.
+---
+ data/org.gnome.dfeet.appdata.xml.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/org.gnome.dfeet.appdata.xml.in b/data/org.gnome.dfeet.appdata.xml.in
+index d86c07a..3f69524 100644
+--- a/data/org.gnome.dfeet.appdata.xml.in
++++ b/data/org.gnome.dfeet.appdata.xml.in
+@@ -24,4 +24,5 @@
+   <update_contact>thomasbechtold_at_jpberlin_de</update_contact>
+   <project_group>GNOME</project_group>
+   <translation type="gettext">d-feet</translation>
++  <content_rating type="oars-1.1" />
+ </component>
+-- 
+2.20.1
+
