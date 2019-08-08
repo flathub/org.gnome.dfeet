@@ -9,7 +9,8 @@
         "--socket=x11",
         "--socket=fallback-x11",
         "--socket=wayland",
-        "--socket=system-bus", "--socket=session-bus"
+        "--socket=system-bus",
+        "--socket=session-bus"
     ],
     "modules": [
         {
@@ -36,7 +37,7 @@
             "build-commands": [
                 "python3 setup.py install --prefix=/app"
             ],
-            "ensure-writable" : [
+            "ensure-writable": [
                 "/lib/python*/site-packages/easy-install.pth"
             ],
             "sources": [
