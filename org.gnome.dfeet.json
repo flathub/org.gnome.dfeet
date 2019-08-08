@@ -71,7 +71,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "appdata-add-OARS-metadata.patch"
+                    "paths": [
+                        "appdata-add-OARS-metadata.patch",
+                        "appdata-add-releases-with-0.3.14-release-date.patch"
+                    ]
                 }
             ]
         }

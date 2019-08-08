@@ -1,0 +1,27 @@
+From 4512e90e6103ac930edb4b4f76c4525db7a64fda Mon Sep 17 00:00:00 2001
+From: Will Thompson <will@willthompson.co.uk>
+Date: Tue, 6 Aug 2019 15:04:16 +0100
+Subject: [PATCH] appdata: add <releases> with 0.3.14 release date
+
+Not submitted upstream; notes for the forthcoming 0.3.15 release
+submitted at https://gitlab.gnome.org/GNOME/d-feet/merge_requests/21.
+---
+ data/org.gnome.dfeet.appdata.xml.in | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/data/org.gnome.dfeet.appdata.xml.in b/data/org.gnome.dfeet.appdata.xml.in
+index 2460a28..18e8541 100644
+--- a/data/org.gnome.dfeet.appdata.xml.in
++++ b/data/org.gnome.dfeet.appdata.xml.in
+@@ -25,4 +25,8 @@
+   <project_group>GNOME</project_group>
+   <translation type="gettext">d-feet</translation>
+   <content_rating type="oars-1.1" />
++
++  <releases>
++    <release version="0.3.14" date="2018-10-24"/>
++  </releases>
+ </component>
+-- 
+2.20.1
+
