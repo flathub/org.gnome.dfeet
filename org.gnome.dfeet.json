@@ -1,7 +1,7 @@
 {
     "id": "org.gnome.dfeet",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.38",
+    "runtime-version": "40",
     "sdk": "org.gnome.Sdk",
     "command": "d-feet",
     "finish-args": [
@@ -23,7 +23,13 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/pygobject/pycairo/releases/download/v1.20.0/pycairo-1.20.0.tar.gz",
-                    "sha256": "5695a10cb7f9ae0d01f665b56602a845b0a8cb17e2123bfece10c2e58552468c"
+                    "sha256": "5695a10cb7f9ae0d01f665b56602a845b0a8cb17e2123bfece10c2e58552468c",
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://api.github.com/repos/pygobject/pycairo/releases/latest",
+                        "version-query": ".tag_name | sub(\"^v\"; \"\")",
+                        "url-query": ".assets[] | select(.name==\"pycairo-\" + $version + \".tar.gz\") | .browser_download_url"
+                    }
                 }
             ],
             "cleanup": [
@@ -40,8 +46,14 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/d-feet/0.3/d-feet-0.3.15.tar.xz",
-                    "sha256": "1fff149ad01ccbd93c927f5733346a9122324b9d367da3adbf4f1a52e47dfdb1"
+                    "url": "https://download.gnome.org/sources/d-feet/0.3/d-feet-0.3.16.tar.xz",
+                    "sha256": "8733ce4b9a9a54ec185b1d85bf4da9d9d11052882a880760ff60f9779b2d1ccb",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "d-feet",
+                        "//": "D-Feet does not follow the odd/even stable branch convention",
+                        "stable-only": false
+                    }
                 }
             ]
         }
